@@ -1,0 +1,584 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --blanco: #fff;
+    --gris: #f2f2f2;
+    --azul: #1369FE;
+    --tifany: #17BEBB;
+    --teal: #0E7C7B;
+    --iris: #454ADE;
+    --fluo: #34e4ea;
+    --seagreen: #1affd5;
+    --negro: #000009; 
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;800&display=swap');
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* estilo del navbar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #fff;
+    position: sticky;
+    top: 0%;
+    z-index: 9999;
+}
+.logo img {
+    height: 100px;
+    width: auto;
+}
+.nav-links {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.nav-links a {
+    text-decoration: none;
+}
+.nav-links li {
+    list-style: none;
+}
+.item {
+    color: #000009;
+    position: relative;
+    padding-bottom: 8px;
+}
+.item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: var(--tifany);
+    transition: width 0.4s ease-out;
+}
+.item:hover.item::after {
+    width: 100%;
+}
+/* fin del navbar */
+/* inicio de portada */
+.inicio {
+    background-image: url(./assets/portada.jpg);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 100px;
+    font-weight: bolder;
+}
+/* fin portada */
+
+/* home */
+.home {
+    padding: 100px 200px; 
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #17BEBB;
+}
+.home .contenido {
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+}
+.home .contenido h1 {
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+.home .contenido h1 span {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.home .contenido p {
+    margin-bottom: 65px;
+    text-align: justify;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+}
+.home .contenido a {
+    background: #fff;
+    padding: 15px 20px;
+    color: #17BEBB;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.home video {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* section hero */
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 5px var(--tifany);
+    border-radius: 15px;
+    margin: 30px;
+}
+.descripcion {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+}
+.descripcion h2 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    word-spacing: 3px;
+    letter-spacing: 5px;
+}
+.descripcion p {
+    font-weight: lighter;
+    text-align: center;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+.viajeros {
+    width: 30vw;
+    height: auto;
+}
+
+/* tarjetas */
+.paquetes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 75px;
+}
+.card {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: default;
+    margin: 30px;
+    transition: all 400ms ease;
+}
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(26,255,213,1);
+    transform: translateY(-3%);
+}
+.card-conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card img {
+    width: 300px;
+    height: 400px;
+    padding-bottom: 15px;
+    border-radius: 25px;
+}
+.card h3,p {
+    text-align: center;
+    font-weight: 400;
+    padding: 0 15px 15px 10px;
+    word-spacing: 3px;
+}
+.card h3 {
+    letter-spacing: 2px;
+}
+.card a {
+    background-color: #1369FE;
+    color: #fff;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+}
+/* fin tarjetas paquetes */
+
+/* servicios */
+.oferta {
+    border-radius: 20px;
+    background-color: var(--seagreen);
+    margin: 20px;
+}
+.titular {
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 36px;
+    color: var(--tifany);
+}
+.servicio {
+    border: 2px solid var(--tifany);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    height: 40vh;
+    padding: 20px;
+    border-radius: 15px;
+}
+.beneficios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    gap: 80px;
+}
+.img-box {
+    width: 350px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 15px;
+    overflow: hidden;
+}
+.img-box img {
+    width: 50%;
+    height: 250px;
+    overflow: hidden;
+    object-fit: contain;
+}
+.servicio h3 {
+    font-weight: lighter;
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+.servicio h3:hover {
+    color: #1369FE;
+}
+.servicio p {
+    padding-top: 20px;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+/* section de contacto */
+.contacto {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(./assets/contacto.jpg);
+    background-size: cover;
+}
+.contacto .contenido {
+    max-width: 800px;
+    text-align: center;
+}
+.contacto .contenido h2 {
+    font-size: 46px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--tifany);
+}
+.contacto .contenido p {
+    font-weight: 300;
+    color: var(--negro);
+    word-spacing: 3px;
+    letter-spacing: 1.5px;
+}
+.conteiner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.conteiner .info-contacto {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.conteiner .info-contacto .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.conteiner .info-contacto .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.conteiner .info-contacto .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color:var(--negro);
+    flex-direction: column;
+    font-weight: 400;
+}
+.conteiner .info-contacto .box .text h3 {
+    font-weight: bold;
+    color: #000009;
+    letter-spacing: 2px;
+}
+.formulario {
+    width: 40%;
+    padding: 40px;
+    background: var(--blanco);
+}
+.formulario h2 {
+    font-size: 30px;
+    color: #000009;
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+}
+.formulario .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.formulario .inputBox input, .formulario .inputBox input textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+.formulario .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+.formulario .inputBox input:focus ~ span, .formulario .inputBox input:valid ~ span, .formulario .inputBox textarea:valid ~ span, .formulario .inputBox textarea:focus ~ span {
+    color: var(--seagreen);
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.formulario .inputBox input[type="submit"] {
+    width: 100px;
+    background: var(--tifany);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+.formulario .inputBox input[type="submit"]:hover {
+    background-color: var(--azul);
+    color: var(--fluo);
+    box-shadow: 2px 1px 2px 0;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--tifany);
+    padding: 70px 0;
+}
+.footer-conteiner {
+    max-width: 1170px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.list-footer {
+    list-style: none;
+}
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--seagreen);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--gris);
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+    color: var(--azul);
+    padding-left: 8px;
+}
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(26,255,213,1);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+    color: var(--azul);
+    background-color: #fff;
+}
+
+
+/* media queries */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 12px;
+    }
+    #Destinos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .beneficios {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .servicio {
+        width: 70%;
+    }
+    .conteiner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .formulario {
+        width: 100%;
+}
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+    .conteiner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .formulario {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1040px) {
+    nav {
+        padding: 12px 20px;
+        transition: 0.5s ease;
+    }
+    .home {
+        padding: 100px 20px;
+    }
+    .descripcion h2 {
+        padding-top: 15px;
+    }
+    .servicio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 12px;
+    }
+}
+@media screen and (max-width: 858px) and (orientation: landscape) {
+    .nav-links li {
+        margin: 5px 0 0 0;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 12px;
+    }
+}
