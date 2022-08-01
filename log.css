@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --blanco: #fff;
+    --gris: #f2f2f2;
+    --azul: #1369FE;
+    --tifany: #17BEBB;
+    --teal: #0E7C7B;
+    --iris: #454ADE;
+    --fluo: #34e4ea;
+    --seagreen: #1affd5;
+    --negro: #000009; 
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;800&display=swap');
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--seagreen);
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.move {
+    padding-bottom: 20px;
+}
+.volver {
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 15px;
+}
+.flecha {
+    height: 10px;
+}
+.conteiner {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    background-color: var(--blanco);
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    perspective-origin: 2700px;
+}
+.conteiner .cover {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+    transform-origin: right;
+    background-image: url(./imagenes/mate\ avion.jpg);
+}
+.conteiner .cover::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: '';
+    opacity: 0.5;
+    z-index: 100;
+    background-color: var(--seagreen);
+    opacity: 0.2;
+}
+.conteiner #flip:checked ~ .cover {
+    transform: rotateY(-180deg);
+}
+.conteiner .form {
+    height: 100%;
+    width: 100%;
+    background-color: var(--blanco);
+}
+.conteiner .form-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-contenido .login-form,
+.form-contenido .signup-form {
+    width: calc(100% / 2 - 25px);
+}
+form .form-contenido .titulo {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000009;
+    position: relative;
+}
+form .signup-form .titulo::before {
+    width: 20px;
+}
+form .form-contenido .input-boxes {
+    margin-top: 30px;
+}
+form .form-contenido .input-box {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+.form-contenido .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+.form-contenido .input-box input:focus {
+    border-color: var(--seagreen);
+}
+.form-contenido .input-box i {
+    position: absolute;
+    color: var(--seagreen);
+    font-size: 17px;
+}
+.form-contenido .button-input-box {
+    padding: 15px;
+}
+form .form-contenido .text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+form .form-contenido .text a {
+    text-decoration: none;
+}
+form .form-contenido .text a:hover {
+    text-decoration: underline;
+}
+.submit {
+    border: solid 2px;
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: clamp(7px, 4vw, 15px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+.submit:hover {
+    color: var(--tifany);
+    background-color: var(--gris);
+}
+form .form-contenido label {
+    color: var(--tifany);
+    cursor: pointer;
+}
+form .form-contenido label:hover {
+    color: var(--iris);
+    text-decoration: underline;
+}
+.conteiner #flip {
+    display: none;
+}
+
+
+/* MEDIAQUERIES */
+@media (max-width: 730px) {
+    .conteiner .cover {
+        display: none;
+    }
+    .form-contenido .login-form, .form-contenido .signup-form {
+        width: 100%;
+    }
+    .form-contenido .signup-form {
+        display: none;
+    }
+    .conteiner #flip:checked ~ form .signup-form {
+        display: block;
+    }
+    .conteiner #flip:checked ~ form .login-form {
+        display: none;
+    }
+}
